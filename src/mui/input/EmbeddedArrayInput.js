@@ -35,8 +35,10 @@ const styles = {
         textTransform: 'capitalize',
     },
     removeButton: {
-        float: 'right',
-        marginTop: '1em',
+        clear: 'both',
+        margin: '1em',
+        display: 'block',
+        textAlign: 'right',
     },
 };
 
@@ -142,13 +144,14 @@ export class EmbeddedArrayInput extends Component {
                 {allowRemove &&
                     !readOnly &&
                     !disabled &&
-                    <FlatButton
-                        primary
-                        label={translate(labelRemove)}
-                        style={styles.removeButton}
-                        icon={<ActionDeleteIcon />}
-                        onClick={removeItem}
-                    />}
+                    <div style={styles.removeButton}>
+                        <FlatButton
+                            primary
+                            label={translate(labelRemove)}
+                            icon={<ActionDeleteIcon />}
+                            onClick={removeItem}
+                        />
+                    </div>}
             </div>
         );
     };
